@@ -6,6 +6,7 @@ let signal = document.querySelector('.signal')
 let pivot = document.querySelector('.pivot')
 let pivotShow = document.querySelector('.pivotShow')
 let cuName = document.querySelector('#cuName')
+let rsi = document.querySelector('#rsi')
 
 
 function validateForm() {
@@ -44,6 +45,12 @@ if (signal.innerText == "long") {
     signal.style.backgroundColor = "green"
 } else {
     signal.style.backgroundColor = "red"
+}
+
+if((rsi.innerText == "Downtrend") || (rsi.innerText == "OverSold")){
+    rsi.style.color = "red"
+}else{
+    rsi.style.color == "green"
 }
 
 pivot.addEventListener('click', function () {

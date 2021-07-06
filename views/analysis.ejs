@@ -7,7 +7,7 @@
                 <div class="card-header c-header">Technical Details</div>
                 <div class="card-body c-body">
                     <p><b>Trend :</b> <span style="font-weight: 300;"><%= trendD %> <span></p>
-                    <p><b>RSI :</b> <span style="font-weight: 300;"></span><%= rsiValue.toFixed(3) %><span id="rsi"> Uptrend </span></p>
+                    <p><b>RSI :</b> <span style="font-weight: 300;"></span><%= rsiValue.toFixed(3) %><span style="margin-left:5px;" id="rsi"> <%= rsiTrend %> </span></p>
                     <p><b>MACD :</b> <span style="font-weight: 300;"><%= mac %><span></p>
                     <p><b >EMA :</b> <span  id="bullorbear" style="font-weight: 600;"><%= EMA %><span></p>
       
@@ -18,7 +18,7 @@
             <div class="card bg-light mb-3" style="max-width: 380px;">
                 <div class="card-header c-header">Fib Retracement(0.618)</div>
                 <div class="card-body c-body">
-                    <p><b>Price :</b> <span style="font-weight: 300;"><%= fibValue %><span></p>
+                    <p><b>Price :</b> <span style="font-weight: 300;"><%= fibValue.toFixed(3) %><span></p>
                     <p><b>Start Price :</b> <span style="font-weight: 300;"><%= fibS %><span></p>
                     <p><b>End Price :</b> <span style="font-weight: 300;"><%= fibE %><span></p>
                     <p style="font-weight: 600" id="fibGuess" ><%= bullrBear %></p>

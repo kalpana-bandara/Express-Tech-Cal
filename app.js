@@ -95,6 +95,23 @@ app.get('/analysis', (req, res) => {
 
                     }
 
+                    function findRSI(x){
+
+                        if(x > 70){
+                            rsii = "OverBought"
+                        }else if(rsi < 30){
+                            rsii = "OverSold"
+                        }
+
+                        if(rsi > 50) {
+                            rsii = "Uptrend"
+                        }else{
+                            rsii = "Downtrend"
+                        }
+
+                        
+                    }
+
                     const blueMacd = response.data.data[1].result.valueMACDSignal
                     const redMacd = response.data.data[1].result.valueMACD
 
@@ -116,10 +133,12 @@ app.get('/analysis', (req, res) => {
                     findFib(avgPrice)
                     findEma(emaVal)
                     findMACD(blueMacd, redMacd)
+                    findRSI(rsi)
 
                     res.render('analysis', {
                         coinName: req.query.coinName,
                         rsiValue: rsi,
+                        rsiTrend : rsii,
                         trendD: trend,
                         mac: macd,
                         fibValue: fib,
