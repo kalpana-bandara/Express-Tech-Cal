@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+
+    <section id="first">
+        <section class="coin-section">
+            <div class="container box">
+                <div class="formBox">
+                    <form action="/analysis" method="get" id="form" class="form">
+                        <label for="coinName">Enter Coin Name</label>
+                        <input id="coinName" type="text" class="form-control" name="coinName" placeholder="BTC"
+                            autocomplete="off">
+
+                        <label for="">Choose a TimeFrame (use 15m for daytrading)</label>
+                        <select id="time" class="form-select time-selector" name="timeSelect">
+                            <option value="1d">1 Day</option>
+                            <option value="4h">4 Hour</option>
+                            <option value="1h">1 Hour</option>
+                            <option value="15m">15 minutes</option>
+                            <option value="5m">5 minutes</option>
+                        </select>
+
+                        <button onclick="validateForm()" id="btnAnalyze" type="submit" class="analyze-btn">Analyze This Coin</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="details-cards" class="details-cards">
+
+    </section>
+
+<%- include('./partials/footer') %>
+

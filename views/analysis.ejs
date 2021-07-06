@@ -1,0 +1,58 @@
+<%- include('./partials/header') %>
+
+<section id="details-cards" class="details-cards">
+    <div class="container">
+        <div class="card-details">
+            <div class="card bg-light mb-3" style="max-width: 380px;">
+                <div class="card-header c-header">Technical Details</div>
+                <div class="card-body c-body">
+                    <p><b>Trend :</b> <span style="font-weight: 300;"><%= trendD %> <span></p>
+                    <p><b>RSI :</b> <span style="font-weight: 300;"></span><%= rsiValue.toFixed(3) %><span id="rsi"> Uptrend </span></p>
+                    <p><b>MACD :</b> <span style="font-weight: 300;">Crossed upwards<span></p>
+                    <p><b >EMA :</b> <span  id="bullorbear" style="font-weight: 600;"><%= EMA %><span></p>
+      
+      
+                </div>
+            </div>
+      
+            <div class="card bg-light mb-3" style="max-width: 380px;">
+                <div class="card-header c-header">Fib Retracement(0.618)</div>
+                <div class="card-body c-body">
+                    <p><b>Price :</b> <span style="font-weight: 300;"><%= fibValue %><span></p>
+                    <p><b>Start Price :</b> <span style="font-weight: 300;"><%= fibS %><span></p>
+                    <p><b>End Price :</b> <span style="font-weight: 300;"><%= fibE %><span></p>
+                    <p style="font-weight: 600" id="fibGuess" ><%= bullrBear %></p>
+      
+                </div>
+            </div>
+      
+            <div class="card bg-light mb-3" style="max-width: 380px;">
+                <div style="margin-bottom: 20px;" class="card-header c-header">Signal Advice</div>
+                <div class="card-body c-body">
+                    <button class="signal"><%= supertrendA %></button>
+                    <p class="stop">Stoploss : <%= supertrendV.toFixed(3) %></p>
+                </div>
+            </div>
+      
+            <div class="card bg-light mb-3" style="max-width: 380px;">
+                <div style="margin-bottom: 40px;" class="card-header c-header">Pivot Points (15m)</div>
+                <div class="card-body c-body">
+                    <button id="pivotButton" class="pivot" style="margin-bottom:20px;">Show Pivot Points</button>
+                    <ul class="pivotShow" style = "padding-left: 0;">
+                       
+                    </ul>  
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="coin">
+        <h1 id="cuName"><%= coinName.toUpperCase() %></h1>
+        <h2><%= price.toFixed(3) %></h2>
+        <p  style="cursor:pointer"><a href="/">Analyze another coin</a></p>
+      </div>
+</section>
+
+<%- include('./partials/footer') %>
+
+
