@@ -47,7 +47,7 @@ if (signal.innerText == "long") {
     signal.style.backgroundColor = "red"
 }
 
-if((rsi.innerText == "Downtrend") || (rsi.innerText == "OverSold")){
+if((rsi.innerText === "Downtrend") || (rsi.innerText === "OverSold")){
     rsi.style.color = "red"
 }else{
     rsi.style.color == "green"
