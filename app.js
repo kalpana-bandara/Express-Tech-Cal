@@ -76,6 +76,29 @@ app.get('/analysis', (req, res) => {
                         }
                     }
 
+                    function findMACD(blue, red) {
+
+                        if ((blue && red) > 0) {
+                            if (blue < red) {
+                                macd = "In an Uptrend"
+                            } else {
+                                macd = "In an Uptrend But had Bearish Crossover"
+                            }
+                        } else {
+                            if (blue > red) {
+                                macd = "In an Downtrend"
+                            } else {
+
+                                macd = "In an downtrend but had Bullish Crossover"
+                            }
+                        }
+
+                    }
+
+                    const blueMacd = response.data.data[1].result.valueMACDSignal
+                    const redMacd = response.data.data[1].result.valueMACD
+
+
                     const rsi = response.data.data[0].result.value
                     const trend = response.data.data[2].result.trend
 
@@ -92,11 +115,13 @@ app.get('/analysis', (req, res) => {
 
                     findFib(avgPrice)
                     findEma(emaVal)
+                    findMACD(blueMacd, redMacd)
 
                     res.render('analysis', {
                         coinName: req.query.coinName,
                         rsiValue: rsi,
                         trendD: trend,
+                        mac: macd,
                         fibValue: fib,
                         fibS: fibStart,
                         fibE: fibEnd,
@@ -160,23 +185,23 @@ app.get('/api/pivots/:coin', (req, res) => {
                 let r4 = pp * 3 + (candleprev.high - 3 * candleprev.low)
                 let s4 = pp * 3 - (3 * candleprev.high - candleprev.low)
 
-                if(cPrice > pp){
+                if (cPrice > pp) {
                     guess = "Current price is above Pivot Point!"
-                }else{
+                } else {
                     guess = "Current price is above Pivot Point!"
                 }
 
                 res.json({
-                    "resistnce1" : r1,
-                    "resistance2" : r2,
-                    "resistance3" : r3,
+                    "resistnce1": r1,
+                    "resistance2": r2,
+                    "resistance3": r3,
                     "resistance4": r4,
-                    "pivot" : pp,
-                    "support1" : s1,
-                    "support2" : s2,
-                    "support3" : s3,
-                    "support4" : s4,
-                    "bowblow" : guess
+                    "pivot": pp,
+                    "support1": s1,
+                    "support2": s2,
+                    "support3": s3,
+                    "support4": s4,
+                    "bowblow": guess
 
                 })
 
