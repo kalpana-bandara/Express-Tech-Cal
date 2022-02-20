@@ -177,7 +177,9 @@ li{
     border: none;
     font-weight: 500;
     border-radius: 5px;
-    margin-left: 23%;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
 
 }
 
