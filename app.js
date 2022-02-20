@@ -28,7 +28,7 @@ app.get('/analysis', (req, res) => {
         res.redirect("/")
     } else {
         async function loadData() {
-            const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHBhbmFiYW5kYXJhLmluZm9AZ21haWwuY29tIiwiaWF0IjoxNjI0MjExNDA4LCJleHAiOjc5MzE0MTE0MDh9.ZeYhfPHZNV5gTrSQGmLDsidbXRBAQX76EIvdI4zGMIQ"
+            const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHBhbmFiYW5kYXJhLmluZm9AZ21haWwuY29tIiwiaWF0IjoxNjQ1MzI4ODkyLCJleHAiOjc5NTI1Mjg4OTJ9.0NFKTikfzJmTMvBqm1P-a_EAhKvr9m64He78ecXqbEU"
             await axios.post("https://api.taapi.io/bulk", {
                     "secret": KEY,
                     "construct": {
@@ -170,7 +170,7 @@ app.get('/api/pivots/:coin', (req, res) => {
     let coinU = req.params.coin
 
     async function loadPivot() {
-        const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHBhbmFiYW5kYXJhLmluZm9AZ21haWwuY29tIiwiaWF0IjoxNjI0MjExNDA4LCJleHAiOjc5MzE0MTE0MDh9.ZeYhfPHZNV5gTrSQGmLDsidbXRBAQX76EIvdI4zGMIQ"
+        const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbHBhbmFiYW5kYXJhLmluZm9AZ21haWwuY29tIiwiaWF0IjoxNjQ1MzI4ODkyLCJleHAiOjc5NTI1Mjg4OTJ9.0NFKTikfzJmTMvBqm1P-a_EAhKvr9m64He78ecXqbEU"
         await axios.post('https://api.taapi.io/bulk', {
                 "secret": API_KEY,
                 "construct": {
